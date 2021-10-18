@@ -72,6 +72,7 @@ export class TodoList {
     await this.renderList();
   }
 
+  // delete task by id
   async deleteTask(id) {
     const res = await fetch(`${this.address}/api/task/${id}`, {
       method: 'DELETE',
@@ -82,6 +83,7 @@ export class TodoList {
     await this.renderList();
   }
 
+  // edit task by id
   async editTask(id, taskDesc, isCompleted) {
     const data = {};
     if (taskDesc !== undefined) {
@@ -102,6 +104,7 @@ export class TodoList {
     await this.renderList();
   }
 
+  // active button control
   async activeButton() {
     const toogle = document.querySelectorAll('.toggle');
     for (const toogleElement of toogle) {
@@ -111,6 +114,7 @@ export class TodoList {
     }
   }
 
+  // completed button control
   async completedButton() {
     const toogle = document.querySelectorAll('.toggle');
     for (const toogleElement of toogle) {
@@ -121,6 +125,7 @@ export class TodoList {
     }
   }
 
+  // check all tasks
   allCheckButton() {
     const toogle = document.querySelectorAll('.toggle');
     for (const toogleElement of toogle) {
@@ -128,6 +133,7 @@ export class TodoList {
     }
   }
 
+  // uncheck all task
   allUncheckButton() {
     const toogle = document.querySelectorAll('.toggle');
     for (const toogleElement of toogle) {
@@ -135,6 +141,7 @@ export class TodoList {
     }
   }
 
+  // remove all completed tasks
   async clearCompleted() {
     const liElements = document.querySelectorAll('.todo-list>li');
 

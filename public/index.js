@@ -8,14 +8,16 @@ const footer = document.querySelector('.footer');
 const allBtn = document.querySelector('.all-btn');
 const activeBtn = document.querySelector('.active-btn');
 const completedBtn = document.querySelector('.completed-btn');
-const crearCompletedBtn = document.querySelector('.clear-completed');
+const clearCompletedBtn = document.querySelector('.clear-completed');
 
 const todo = new TodoList('http://localhost:3000', todoDOM, footer, todoCount);
 
+// initial to do list render
 window.addEventListener('DOMContentLoaded', async () => {
   await todo.renderList();
 });
 
+// add new task input bar
 newTodoInput.addEventListener('keypress', async (e) => {
   if (newTodoInput.value && e.key === 'Enter') {
     await todo.addTask(newTodoInput.value);
@@ -23,6 +25,7 @@ newTodoInput.addEventListener('keypress', async (e) => {
   }
 });
 
+// checked and unchecked control
 let checked = false;
 allBtn.addEventListener('click', () => {
   if (checked) {
@@ -42,6 +45,6 @@ completedBtn.addEventListener('click', async () => {
   await todo.completedButton();
 });
 
-crearCompletedBtn.addEventListener('click', async () => {
+clearCompletedBtn.addEventListener('click', async () => {
   await todo.clearCompleted();
 });
