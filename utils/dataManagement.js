@@ -10,9 +10,7 @@ async function loadToDoData(path) {
     return { tasks, lastId: tasks.length !== 0 ? data.lastId : 0 };
   } catch (err) {
     if (err.code === 'ENOENT') {
-      const error = new Error('File not found');
-      error.code = 'ENOENT';
-      throw error;
+      return { tasks: [], lastId: 0 };
     }
     throw new Error('Unknown error');
   }
