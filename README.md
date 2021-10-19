@@ -2,7 +2,7 @@
 
 Źle zinterpretowałem działanie tego szablonu więc sterowanie jest nieco inne.
 <ul>
-  <li>All - zaznacza wszystkie pozycje lub odznacza</li>
-  <li>Active - zmienia stan zaznaczonych elementów na active</li>
-  <li>Completed - zmienia stan zaznaczonych elementów na completed.</li>
+  <li><strong>All</strong> - zaznacza wszystkie pozycje lub odznacza</li>
+  <li><strong>Active</strong> - zmienia stan zaznaczonych elementów na active</li>
+  <li><strong>Completed</strong> - zmienia stan zaznaczonych elementów na completed.</li>
 </ul>
